@@ -1,0 +1,41 @@
+.kpi-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+  margin-bottom: 20px; /* For spacing when in grid */
+  min-width: 200px; /* Ensure cards have a minimum width */
+}
+
+.kpi-card:hover {
+  transform: translateY(-5px);
+}
+
+.kpi-icon {
+  font-size: 40px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kpi-content {
+  flex-grow: 1;
+}
+
+.kpi-title {
+  margin: 0;
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.kpi-value {
+  margin: 0;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+}

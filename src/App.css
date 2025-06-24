@@ -1,0 +1,103 @@
+/* Basic global styling */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5; /* Light background for the whole app */
+  color: #333;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Dashboard specific styling */
+.dashboard-layout {
+  max-width: 1400px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-layout h1 {
+  color: #2c3e50;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+/* KPI Cards Layout */
+.kpi-cards {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /* Responsive grid */
+  gap: 25px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+/* Chart Grid Layout */
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(400px, 1fr)
+  ); /* Responsive grid for charts */
+  gap: 25px;
+}
+
+.chart-card {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  height: 400px; /* Fixed height for charts for consistency */
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-card h2 {
+  color: #34495e;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+/* Ensure canvas takes full height of its parent */
+.chart-card canvas {
+  flex-grow: 1; /* Allow canvas to grow and take available space */
+  max-height: calc(100% - 60px); /* Adjust based on h2 and padding */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-layout {
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  .kpi-cards,
+  .chart-grid {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+  }
+
+  .dashboard-layout h1 {
+    font-size: 2em;
+  }
+
+  .chart-card {
+    height: auto; /* Auto height for smaller screens */
+    min-height: 350px;
+  }
+}
